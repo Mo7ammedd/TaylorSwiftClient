@@ -14,7 +14,7 @@ export default async function Page() {
   const data = await getData()
   if (!data) {
       return (
-          'ass'
+          'You'
       );
   }
   return (
