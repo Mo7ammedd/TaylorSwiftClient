@@ -26,7 +26,7 @@ export const SwiftGallery = () => {
             <img className="h-auto max-w-full rounded-xl" src="https://lastfm.freetls.fastly.net/i/u/770x0/cb434ff45430c2cf4080c1abd118adce.jpg#cb434ff45430c2cf4080c1abd118adce" alt=""/>
         </div>
         <div>
-            <img className="h-auto max-w-full rounded-xl" src="https://lastfm.freetls.fastly.net/i/u/770x0/bd99a6f0b63292f2c09ec4c0d4cb3e4e.jpg#bd99a6f0b63292f2c09ec4c0d4cb3e4e" alt=""/>
+            <img className="h-auto max-w-full rounded-xl" src="https://i.pinimg.com/736x/e3/a2/a0/e3a2a028602b0070fa5eae8225b238f9.jpg" alt=""/>
         </div>
         <div>
             <img className="h-auto max-w-full rounded-xl" src="https://lastfm.freetls.fastly.net/i/u/770x0/48aa10ec26931086835287e62064ee00.jpg#48aa10ec26931086835287e62064ee00" alt=""/>

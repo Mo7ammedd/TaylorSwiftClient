@@ -26,7 +26,7 @@ export function TimeOutComponent(
           className="hover:bg-[#AD7974] bg-[#B2847A] transition duration-200 rounded-[2rem]  px-2 md:px-4 py-1 text-sm md:text-base md:py-2 text-center font-bold items-center"
           href="/"
         >
-        Go Home
+        Go Home Nigga
         </a>
         <button
           onClick={()=> window.location.reload()}
