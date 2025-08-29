@@ -1,6 +1,6 @@
 # Taylor Swift Quiz Client
 
-[live demo](hhttps://swiftiequiz.vercel.app)
+[live demo](https://swiftiequiz.vercel.app)
 
 ## New Features Added
 
