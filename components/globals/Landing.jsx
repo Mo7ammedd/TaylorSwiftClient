@@ -13,7 +13,7 @@ export const Landing = () => {
   const [showHistory, setShowHistory] = React.useState(false);
   
   const saveName = () => {
-    const safeName = Name && Name.trim() !== '' ? Name.trim() : 'Swiftie'
+    const safeName = Name && Name.trim() !== '' ? Name.trim() : 'ass'
     try {
       router.push(`/quiz?name=${encodeURIComponent(safeName)}`)
     } catch (e) {
