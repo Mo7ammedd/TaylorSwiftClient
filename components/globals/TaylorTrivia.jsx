@@ -301,7 +301,6 @@ export const CompactTrivia = ({ className = '', buttonClassName = '' }) => {
         onClick={() => setIsOpen(true)}
         className={`${buttonClassName || `inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all transform hover:scale-105`} ${className}`}
       >
-        <span>💫</span>
         <span>Taylor Swift Trivia</span>
       </button>
 

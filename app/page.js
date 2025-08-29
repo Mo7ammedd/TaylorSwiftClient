@@ -16,14 +16,17 @@ export default function Home() {
       <SwiftGallery />
       <HorizontalSpacer small={false} />
       
-      {/* Taylor Swift Trivia Section */}
-      <div className="w-full text-center">
-        <h2 className="text-3xl font-bold text-white mb-6">Learn About Taylor Swift</h2>
-        <CompactTrivia 
-          className="text-lg"
-          buttonClassName="rounded-[2rem] px-4 md:px-6 py-2 text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
-        />
-      </div>
+   {/* Taylor Swift Trivia Section */}
+<div className="w-full min-h-[50vh] flex flex-col justify-center items-center text-center">
+  <h2 className="text-3xl font-bold text-white mb-6">
+    Learn About Taylor Swift
+  </h2>
+  <CompactTrivia
+    className="text-lg"
+    buttonClassName="rounded-[2rem] px-4 md:px-6 py-2 text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
+  />
+</div>
+
       
       <HorizontalSpacer small={false} />
       <MeetTheTeam />
