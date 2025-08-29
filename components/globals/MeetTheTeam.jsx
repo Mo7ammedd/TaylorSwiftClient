@@ -16,7 +16,7 @@ export default function MeetTheTeam() {
         </div>
         <div className="flex flex-row w-full justify-center flex-wrap gap-4">
          
-          <a href="https://www.mohamedtv.tech" className="flex flex-col items-center gap-2">
+          <a href="https://www.mohammedd.tech" className="flex flex-col items-center gap-2">
             <div className="h-20 w-20">
               <Image 
               className="border rounded-full"
