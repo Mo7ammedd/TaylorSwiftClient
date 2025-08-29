@@ -10,6 +10,9 @@ import { socket } from "@/utils/socket";
 import ProgressBar from './globals/ProgressCircle';
 import { FloatingCircles } from './globals/FloatingUsers';
 import { TimeOutComponent } from './globals/TimeOut';
+import { quizHistoryManager } from '@/utils/quizHistory';
+import { CompactSharing } from './globals/SocialSharing';
+import { CompactTrivia } from './globals/TaylorTrivia';
 
 export default function RealQuiz({ QuizQuestions }) {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -51,6 +54,15 @@ export default function RealQuiz({ QuizQuestions }) {
   
     } else {
       setQuizFinished(true);
+      
+      // Save quiz attempt to history
+      const quizData = {
+        score: score,
+        totalQuestions: QuizQuestions.length,
+        timeSpent: quizStartTime ? Date.now() - quizStartTime : 0,
+        questions: QuizQuestions
+      };
+      quizHistoryManager.saveQuizAttempt(quizData);
     }
   };
   
@@ -77,6 +89,7 @@ export default function RealQuiz({ QuizQuestions }) {
 
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
   const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [quizStartTime, setQuizStartTime] = useState(null);
 
   useEffect(() => {
     const { question, answers } = QuizQuestions[currentQuestionIndex];
@@ -106,6 +119,8 @@ export default function RealQuiz({ QuizQuestions }) {
   
     socket.on('userList', handleUserList);
   
+    // Set quiz start time
+    setQuizStartTime(Date.now());
   
     return () => {
       socket.off('userList', handleUserList);
@@ -119,7 +134,23 @@ export default function RealQuiz({ QuizQuestions }) {
   return (
     <>
      {QuizFinished ?
-      <TimeOutComponent Quizfinished={true} score={score} />
+      <div className="space-y-6">
+        <TimeOutComponent Quizfinished={true} score={score} />
+        
+        {/* Quiz Results Actions */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
+          <CompactSharing 
+            quizResult={{ score, totalQuestions: QuizQuestions.length }}
+            userName={searchParams.get('name') || 'Swiftie'}
+            className="w-full sm:w-auto"
+            buttonClassName="rounded-[2rem] px-3 md:px-5 py-2 text-sm md:text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
+          />
+          <CompactTrivia 
+            className="w-full sm:w-auto"
+            buttonClassName="rounded-[2rem] px-3 md:px-5 py-2 text-sm md:text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
+          />
+        </div>
+      </div>
       :
       <div className="py-4">
       {CurrentUsers.length>0 &&

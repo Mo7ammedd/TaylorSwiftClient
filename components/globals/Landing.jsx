@@ -3,20 +3,26 @@ import React from 'react'
 import { HorizontalSpacer } from './Icons'
 import { Link } from 'next-view-transitions'
 import { useRouter } from 'next/navigation'
+import { CompactTrivia } from './TaylorTrivia'
+import { QuizHistory } from './QuizHistory'
 
 
 export const Landing = () => {
   const router = useRouter()
   const [Name, setName] = React.useState('');
+  const [showHistory, setShowHistory] = React.useState(false);
+  
   const saveName = () => {
-    if (Name.trim() !== '') {
-      router.push(`/quiz?name=${Name}`)
-    }else{
-      router.push('/quiz?name=ass')
+    const safeName = Name && Name.trim() !== '' ? Name.trim() : 'Swiftie'
+    try {
+      router.push(`/quiz?name=${encodeURIComponent(safeName)}`)
+    } catch (e) {
+      // Fallback navigation
+      window.location.href = `/quiz?name=${encodeURIComponent(safeName)}`
     }
-    
   }
   return (
+    <>
     <div className="w-full rounded-xl bg-transparent">
        <svg
            className="absolute opacity-40 left-0 top-0 w-full h-full -z-10 object-cover"viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="b" cx="50%" cy="50%" r="50%" fx="20%" fy="36%"><stop offset="0%" stopColor="#DEA78C" /><stop offset="100%" stopColor="rgba(194,68,247,0.2)" /></radialGradient><filter id="a" x="-500" y="-500" width="2000" height="2000" filterUnits="userSpaceOnUse"><feGaussianBlur in="SourceGraphic" stdDeviation="100" /></filter></defs><rect width="100%" height="100%" /><g filter="url(#a)">
@@ -56,9 +62,29 @@ export const Landing = () => {
               Start Quiz
           </button>
           
+          {/* Feature Buttons (dark glass theme) */}
+          <div className="flex flex-col sm:flex-row gap-3 mt-4">
+            <button 
+              onClick={() => setShowHistory(true)}
+              className="rounded-[2rem] px-3 md:px-5 py-2 text-sm md:text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
+            >
+              View Progress
+            </button>
+            <CompactTrivia 
+              buttonClassName="rounded-[2rem] px-3 md:px-5 py-2 text-sm md:text-base font-bold text-gray-100 bg-black/40 hover:bg-black/60 border border-white/10 backdrop-blur"
+            />
+          </div>
+          
           <HorizontalSpacer small={true}/>
           </div>
       </div>
       </div>
+      
+      {/* Quiz History Modal */}
+      <QuizHistory 
+        isOpen={showHistory}
+        onClose={() => setShowHistory(false)}
+      />
+    </>
   )
 }

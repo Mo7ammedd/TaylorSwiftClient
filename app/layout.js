@@ -30,13 +30,13 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: 'https://taylor-swift-quiz.vercel.app/',
+    url: 'https://swiftiequiz.vercel.app',
     title: 'TaylorSwift',
     description: ' TaylorSwift',
     siteName: 'TaylorSwift',
     images: [
       {
-        url: 'https://taylor-swift-quiz.vercel.app/og',
+        url: 'https://swiftiequiz.vercel.app/og',
         width: 1200,
         height: 630,
         alt: 'TaylorSwift',
