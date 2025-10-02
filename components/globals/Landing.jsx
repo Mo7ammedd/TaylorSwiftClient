@@ -33,16 +33,16 @@ export const Landing = () => {
           <div className="flex flex-col items-center justify-center space-y-6">
             <div className="space-y-2 text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                abedelhamid araby
+                Taylor Swift
               </h1>
             </div>
             <div className="flex justify-center">
               <img
-                alt="Hydra De lyrne"
+                alt="Taylor Swift"
                 className="rounded-full border border-2"
                 height="200"
               src="
-              https://pbs.twimg.com/profile_images/1961234257361174528/Y4xbsAfR_400x400.jpg"
+              https://i.pinimg.com/564x/7f/f1/47/7ff1479b6d3dc74d30224744a2a4c341.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
@@ -54,12 +54,12 @@ export const Landing = () => {
             value={Name}
             onChange={(e)=>setName(e.target.value)}
             className="text-lg bg-transparent border-none outline-none text-center font-semibold text-gray-100"
-          placeholder='Real Hydra?...'
+          placeholder='Real Swiftie?...'
           />
          
           
             <button onClick={saveName}  className="hover:bg-[#AD7974] transition duration-200 rounded-[2rem] bg-[#B2847A] px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ">
-              start 3araby
+              Start z
           </button>
           
           {/* Feature Buttons (dark glass theme) */}
