@@ -38,7 +38,7 @@ export const Landing = () => {
             </div>
             <div className="flex justify-center">
               <img
-                alt="Hydra de lyrne"
+                alt="Hydra De lyrne"
                 className="rounded-full border border-2"
                 height="200"
               src="
