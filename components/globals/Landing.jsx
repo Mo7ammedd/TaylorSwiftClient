@@ -33,12 +33,12 @@ export const Landing = () => {
           <div className="flex flex-col items-center justify-center space-y-6">
             <div className="space-y-2 text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-                Taylor Swift
+                Hydra De lyrne
               </h1>
             </div>
             <div className="flex justify-center">
               <img
-                alt="Taylor Swift"
+                alt="Hydra De lyrne"
                 className="rounded-full border border-2"
                 height="200"
               src="
