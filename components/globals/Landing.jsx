@@ -42,7 +42,7 @@ export const Landing = () => {
                 className="rounded-full border border-2"
                 height="200"
               src="
-              https://i.pinimg.com/564x/7f/f1/47/7ff1479b6d3dc74d30224744a2a4c341.jpg"
+              https://pbs.twimg.com/profile_images/1961234257361174528/Y4xbsAfR_400x400.jpg"
                 style={{
                   aspectRatio: "200/200",
                   objectFit: "cover",
