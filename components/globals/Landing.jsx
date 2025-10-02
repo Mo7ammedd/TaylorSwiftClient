@@ -59,7 +59,7 @@ export const Landing = () => {
          
           
             <button onClick={saveName}  className="hover:bg-[#AD7974] transition duration-200 rounded-[2rem] bg-[#B2847A] px-2 md:px-4 py-1 text-sm md:text-base md:py-2  font-bold ">
-              Start z
+              Start Quiz
           </button>
           
           {/* Feature Buttons (dark glass theme) */}
